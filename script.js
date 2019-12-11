@@ -12,8 +12,8 @@ function displayResults(responseJson) {
     //list with the repo title, link
     $('#results-list').append(
       `<li>
-      <h3>${responseJson[i].title}</h3>
-      <p><a href="${responseJson[i].html_url}"</a>
+      <h3>${responseJson[i].name}</h3>
+      <p><a href="${responseJson[i].html_url}">${responseJson[i].html_url}</a>
       </li>`
     )};
   //display the results section  
@@ -22,8 +22,8 @@ function displayResults(responseJson) {
 
 function getRepos(searchTerm) {
   
-  
- const url = 'https://api.github.com/users/${searchTerm}/repos';
+console.log(searchTerm);
+ const url = `https://api.github.com/users/${searchTerm}/repos`;
 
   console.log(url);
 
